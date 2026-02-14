@@ -306,17 +306,9 @@ class TrigIdentityAnimation(Scene):
         circle = Circle(radius=1.5, color=WHITE)
         circle.to_edge(DOWN, buff=0.5)
         
-        # Angle line
+        # Angle line at 30 degrees
         angle_line = Line(circle.get_center(), circle.get_center() + RIGHT * 1.5, color=YELLOW)
         
-        # sin and cos projections
-        sin_line = DashedLine(
-            circle.get_center() + RIGHT * 1.5,
-            circle.get_center() + RIGHT * 1.5 + UP * 0,
-            color=RED
-        )
-        
-        circle_group = VGroup(circle, angle_line, sin_line)
         circle_label = Text("Unit Circle", font_size=24).next_to(circle, DOWN, buff=0.3)
         
         self.play(Create(circle), Create(angle_line), Write(circle_label))
