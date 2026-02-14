@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2257293077_928420319_223132457.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_2574473371_1375008711.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_3905090294_537805784.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_1704566161_1947975527.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_1530825377_85346777.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_2574473371_1863274668.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_1206904118_76427946.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_773992818_3313420109.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_2723450874_3847646405.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_2095820897_453590800.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_1688176962_3239714117.mp4'
+file 'file:/Users/rifaterdemsahin/projects/Manim/3_Simulation/output/videos/video_animations/1080p60/partial_movie_files/StaticVsDynamicAnimation/2135761390_1432596116_4064387621.mp4'
