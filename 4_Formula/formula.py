@@ -1,6 +1,17 @@
 """
 4_Formula: Mathematical Formulas Visualization
-This animation demonstrates mathematical formulas and equations.
+
+This module contains 6 sample Manim animations demonstrating various mathematical concepts:
+
+1. FormulaAnimation - Einstein's E=mc² and Pythagorean theorem
+2. QuadraticFormulaAnimation - Quadratic formula with example solution
+3. EulerFormulaAnimation - Euler's formula and the beautiful identity
+4. DerivativeAnimation - Calculus derivative visualization with tangent line
+5. IntegralAnimation - Integration as area under curve
+6. TrigIdentityAnimation - Trigonometric identities with unit circle
+
+Each animation can be rendered individually or all at once using the script at the bottom.
+See README.md for detailed information about each animation.
 """
 
 from manim import *
