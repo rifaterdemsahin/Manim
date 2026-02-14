@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manim Animation Project - Sample animations for video production optimized for DaVinci Resolve">
+    <title>Manim Animation Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+        
+        .intro h2 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .intro p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-title {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .animations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .animation-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .animation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .animation-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .animation-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .animation-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .animation-body {
+            padding: 1.5rem;
+        }
+        
+        .animation-purpose {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .animation-concept {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .animation-file {
+            background: #f4f4f4;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .cta-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-section h2 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .code-example code {
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        footer p {
+            color: #666;
+        }
+        
+        .video-reference {
+            background: rgba(255, 215, 0, 0.2);
+            border-left: 4px solid gold;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .video-reference a {
+            color: #667eea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Manim Animation Project</h1>
+            <p class="subtitle">Professional animations for video production & DaVinci Resolve</p>
+            <div class="video-reference">
+                📺 Inspired by <a href="https://youtu.be/5qj3b7DY5oA" target="_blank">3Blue1Brown's Animation Tutorial</a>
+            </div>
+        </header>
+        
+        <div class="intro">
+            <h2>🎯 About This Project</h2>
+            <p>
+                This project contains seven sample Manim animations optimized for video production. 
+                Each animation represents a different concept in software development and problem-solving, 
+                rendered in high quality and ready for import into DaVinci Resolve.
+            </p>
+            <p>
+                <strong>What is Manim?</strong> Manim (Mathematical Animation Engine) is a powerful Python library 
+                for creating mathematical and technical animations, made famous by 3Blue1Brown's educational videos.
+            </p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎥</div>
+                <div class="feature-title">DaVinci Resolve Ready</div>
+                <p>All outputs are MP4 (H.264), 1920x1080, 60fps</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">High Quality</div>
+                <p>Professional rendering settings for production</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <div class="feature-title">Educational</div>
+                <p>Perfect for tutorials and tech content</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-title">Customizable</div>
+                <p>Easy to modify and extend</p>
+            </div>
+        </div>
+        
+        <h2 style="color: white; text-align: center; margin: 2rem 0; font-size: 2rem;">
+            📁 Animation Categories
+        </h2>
+        
+        <div class="animations">
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">1️⃣</div>
+                    <div class="animation-title">Real Unknown - Goal Setting</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Exploring unknown territories and setting goals
+                    </p>
+                    <p class="animation-concept">
+                        Visualizes the journey from uncertainty to achievement, navigating obstacles 
+                        and unknowns to reach defined objectives.
+                    </p>
+                    <div class="animation-file">📄 1_Real_Unknown/goal.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">2️⃣</div>
+                    <div class="animation-title">Environment - Reading Files</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Data ingestion and environment configuration
+                    </p>
+                    <p class="animation-concept">
+                        Demonstrates how systems read configuration files, process data inputs, 
+                        and handle environment variables.
+                    </p>
+                    <div class="animation-file">📄 2_Environment/read_files.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">3️⃣</div>
+                    <div class="animation-title">Simulation - Particle Systems</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Simulation and modeling concepts
+                    </p>
+                    <p class="animation-concept">
+                        Monte Carlo style particle simulation showing how complex system 
+                        behaviors can be understood through simulation.
+                    </p>
+                    <div class="animation-file">📄 3_Simulation/simulation.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">4️⃣</div>
+                    <div class="animation-title">Formula - Mathematics</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Visualizing mathematical concepts
+                    </p>
+                    <p class="animation-concept">
+                        Brings abstract mathematical ideas to life with famous equations 
+                        like E=mc² and the Pythagorean theorem.
+                    </p>
+                    <div class="animation-file">📄 4_Formula/formula.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">5️⃣</div>
+                    <div class="animation-title">Symbols - Code Visualization</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Programming concepts and algorithms
+                    </p>
+                    <p class="animation-concept">
+                        Shows code structure and recursive algorithms, making abstract 
+                        programming concepts visually understandable.
+                    </p>
+                    <div class="animation-file">📄 5_Symbols/code.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">6️⃣</div>
+                    <div class="animation-title">Semblance - Error Handling</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Debugging and error management
+                    </p>
+                    <p class="animation-concept">
+                        Demonstrates error detection and fixing workflow, showing how to 
+                        identify, handle, and resolve errors in code.
+                    </p>
+                    <div class="animation-file">📄 6_Semblance/errors.py</div>
+                </div>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-header">
+                    <div class="animation-number">7️⃣</div>
+                    <div class="animation-title">Testing Known - Validation</div>
+                </div>
+                <div class="animation-body">
+                    <p class="animation-purpose">
+                        <strong>Purpose:</strong> Testing and quality assurance
+                    </p>
+                    <p class="animation-concept">
+                        Illustrates test execution and validation workflows, ensuring 
+                        code quality through systematic testing.
+                    </p>
+                    <div class="animation-file">📄 7_Testing_known/testing.py</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>🚀 Get Started</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                Ready to create amazing animations? Clone the repository and start rendering!
+            </p>
+            
+            <div class="code-example">
+                <code>
+# Clone the repository<br>
+git clone https://github.com/rifaterdemsahin/Manim.git<br>
+cd Manim<br>
+<br>
+# Install dependencies<br>
+pip install -r requirements.txt<br>
+<br>
+# Render an animation<br>
+manim -pqh 1_Real_Unknown/goal.py GoalAnimation
+                </code>
+            </div>
+            
+            <a href="https://github.com/rifaterdemsahin/Manim" class="btn">View on GitHub</a>
+            <a href="https://docs.manim.community/" class="btn">Manim Docs</a>
+        </div>
+        
+        <div class="intro">
+            <h2>💡 Prompt Examples for Creating Animations</h2>
+            <p><strong>1. Data Flow:</strong> "Create a Manim animation showing data flowing through a pipeline with three stages: input, processing, and output."</p>
+            <p><strong>2. Sorting Algorithm:</strong> "Animate bubble sort with colored bars that swap positions."</p>
+            <p><strong>3. Network Graph:</strong> "Visualize nodes connecting in a network topology, starting isolated then connecting."</p>
+            <p><strong>4. State Machine:</strong> "Show a state machine with 4 states and transitions between them."</p>
+            <p><strong>5. Binary Tree:</strong> "Animate binary search tree insertion with values: 50, 30, 70, 20, 40, 60, 80."</p>
+        </div>
+        
+        <footer>
+            <p><strong>Made with ❤️ using Manim</strong></p>
+            <p>For issues or questions, visit the <a href="https://github.com/rifaterdemsahin/Manim" style="color: #667eea;">GitHub repository</a></p>
+        </footer>
+    </div>
+</body>
+</html>
